@@ -16,10 +16,10 @@ champPage = BeautifulSoup(response.text, 'html.parser')
 
 
 counterData = champPage.findAll('td')[0:16:3] # ets first 'tbody' tag on page as it contains the data I require.
-#print(yeet) #Testing purposes, to show that tbody does indeed contain the data.
+#print(counterData) #Testing purposes, to show that tbody does indeed contain the data.
 
 for elem in counterData:
-    otherChamp = elem.select('img') #Following lines turns tag elements from yeet into String elements
+    otherChamp = elem.select('img') #Following lines turns tag elements from counterData into String elements
     if elem == counterData[0]:
         print()
         print('Countered by:')
