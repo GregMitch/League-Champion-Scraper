@@ -15,7 +15,7 @@ response = requests.get(url)
 champPage = BeautifulSoup(response.text, 'html.parser')
 
 
-counterData = champPage.findAll('td')[0:16:3] # ets first 'tbody' tag on page as it contains the data I require.
+counterData = champPage.findAll('td')[0:16:3] # gets first 'tbody' tag on page as it contains the data I require.
 #print(counterData) #Testing purposes, to show that tbody does indeed contain the data.
 
 for elem in counterData:
@@ -33,14 +33,14 @@ for elem in counterData:
 
 
 """
-yaw = yeet[0].select('img') #Following lines turns tag elements from yeet into String elements
-yawString = str(yaw)
+otherChamp = counterData[0].select('img') #Following lines turns tag elements from counterData into String elements
+otherChampString = str(otherChamp)
 
-# print(type(yawString)) #Confirmation that element is indeed a string.
+# print(type(otherChampString)) #Confirmation that element is indeed a string.
 
 #Following lines finds the index positions for the start and end of a champions name
-champNameStart = yawString.find('champion/') + 9
-champNameEnd = yawString.find('.p')
-print(yawString[champNameStart:champNameEnd])
+champNameStart = otherChampString.find('champion/') + 9
+champNameEnd = otherChampString.find('.p')
+print(otherChampString[champNameStart:champNameEnd])
 """
 
